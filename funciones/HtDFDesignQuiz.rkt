@@ -1,0 +1,30 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname HtDFDesignQuiz) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+(require 2htdp/image)
+;Image Image -> Boolean
+;Consumes 2 images and outpust true if first image(height and width are larger) is larger
+
+(check-expect (larger-img? (triangle 20 "solid" "blue") (triangle 30 "solid" "blue")) false)
+(check-expect (larger-img? (rectangle 20 30 "solid" "blue") (rectangle 20 30 "solid" "blue")) false)
+(check-expect (larger-img? (rectangle 100 30 "solid" "blue") (rectangle 20 30 "solid" "blue")) false)
+(check-expect (larger-img? (rectangle 100 30 "solid" "blue") (rectangle 20 20 "solid" "blue")) true)
+(check-expect (larger-img? (rectangle 10 30 "solid" "blue") (rectangle 20 20 "solid" "blue")) false)
+(check-expect (larger-img? (rectangle 100 30 "solid" "blue") (rectangle 20 20 "solid" "blue")) true)
+(check-expect (larger-img? (rectangle 20 50 "solid" "blue") (rectangle 20 20 "solid" "blue")) false)
+(check-expect (larger-img? (rectangle 20 50 "solid" "blue") (circle 20 "solid" "blue")) false)
+(check-expect (larger-img? (rectangle 100 10 "solid" "blue") (rectangle 20 20 "solid" "blue")) false)
+
+
+
+
+;(define (larger-img? img1 img2) false);stud
+
+
+;(define (larger-img? img1 img2);template
+;  (... img1 img2));
+
+(define (larger-img? img1 img2)
+  (and (> (image-width img1) (image-width img2))
+       (> (image-height img1) (image-height img2)))
+  );

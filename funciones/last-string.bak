@@ -1,0 +1,25 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname last-string) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+;; String -> String
+;; extract last character from a string
+(check-expect (string-last "hola") "a")
+(check-expect (string-last "tango") "o")
+(check-expect (string-last "greca") "a")
+
+
+;(define (string-last str) " ");stub
+
+
+#;
+(define (string-last str);template
+  (... str))
+
+
+(define (string-last str)
+  (string-ref
+   str
+  0))
+
+
+

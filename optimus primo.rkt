@@ -1,0 +1,53 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname |optimus primo|) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+(require 2htdp/image)
+
+
+(define road
+  (overlay
+   (beside
+    (rectangle 100 5 "solid" "white")
+    (rectangle 100 5 "solid" "gray")
+    (rectangle 100 5 "solid" "white")
+    (rectangle 100 5 "solid" "gray")
+    (rectangle 100 5 "solid" "white")
+    (rectangle 100 5 "solid" "gray")
+    (rectangle 100 5 "solid" "white")
+    (rectangle 100 5 "solid" "gray")
+    (rectangle 100 5 "solid" "white")
+    (rectangle 100 5 "solid" "gray"))     
+   (rectangle 1000 75 "solid" "gray")))
+
+
+(define wheels
+  (beside
+     (circle 25 "solid" "black")
+     (rectangle 200 0 "solid" "black")
+     (circle 25 "solid" "black")
+     (rectangle 75 0 "solid" "black")
+     (circle 25 "solid" "black")))
+
+
+(define body
+  (beside/align "bottom"
+    (rectangle 274 100 "solid" "red")
+    (rectangle 85 100 "solid" "blue")
+    (rectangle 75 50 "solid" "blue")))
+
+
+(define optimus
+  (above/align "left" body wheels))
+
+
+(above/align "left" optimus road)
+
+      
+
+
+      
+
+
+
+
+      
